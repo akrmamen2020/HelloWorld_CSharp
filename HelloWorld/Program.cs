@@ -5,16 +5,24 @@ class Program
     static void Main()
     {
 
-        string str = null;
+        float f = 15431654645646.55f;
 
-        int? availableTickets = null;
+        string str = "100";
 
-        int numberOfTickets;
+        int result = 0;
 
+        bool isTrue = int.TryParse(str, out result);
 
-        numberOfTickets = availableTickets ?? 0;
+        int i = result;
 
-        Console.WriteLine(numberOfTickets);
+        if (isTrue == true)
+        {
+            Console.WriteLine(i);
+        }
+        else
+        {
+            Console.WriteLine("The input is not correct");
+        }
 
         Console.ReadKey(true);
     }
