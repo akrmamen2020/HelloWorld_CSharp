@@ -5,24 +5,21 @@ class Program
     static void Main()
     {
 
-        float f = 15431654645646.55f;
+        string str = "Ahmed Moahamdy 2020";
 
-        string str = "100";
+        Console.WriteLine(str[0]);
 
-        int result = 0;
+        int[] numbers = new int[3];
 
-        bool isTrue = int.TryParse(str, out result);
+        numbers[0] = 100;
+        numbers[1] = 200;
+        numbers[2] = 300;
 
-        int i = result;
+        Console.WriteLine(numbers[2]);
 
-        if (isTrue == true)
-        {
-            Console.WriteLine(i);
-        }
-        else
-        {
-            Console.WriteLine("The input is not correct");
-        }
+        string[] strArr = new string[] { "Mohamed", "Mahomud", "Salah" } ;
+
+        Console.WriteLine(strArr[1][0]);
 
         Console.ReadKey(true);
     }
