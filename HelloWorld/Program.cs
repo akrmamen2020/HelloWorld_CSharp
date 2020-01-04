@@ -6,18 +6,18 @@ class Program
     {
         Console.WriteLine("Hello world");
 
-        Console.WriteLine("Enter Your First Name :");
-        string firstName = Console.ReadLine();
+        string stringVar = "Hello World!!";
+        int intVar = 100;
+        float floatVar = 10.2f;
+        char charVar = 'A';
+        bool boolVar = true;
 
-        Console.WriteLine("Enter Your Last Name :");
-        string lastName = Console.ReadLine();
+        Console.WriteLine("Max int Value {0}", int.MaxValue);
+        Console.WriteLine("Min int Value {0}", int.MinValue);
 
+        int d = 2014512454;
 
-        Console.WriteLine("Welcome Back " + firstName + " " + lastName);
-        Console.WriteLine("Your Acount is Active Mr.{0} {1}", firstName, lastName);
-
-
-
+        Console.WriteLine("The double number is {0}", d);
 
         Console.ReadKey(true);
     }
