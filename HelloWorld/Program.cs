@@ -5,24 +5,16 @@ class Program
     static void Main()
     {
 
-        string str = "Ahmed";
-        int i = 10;
-        bool b = true;
+        string str = null;
 
-        i = 20;
+        int? availableTickets = null;
+
+        int numberOfTickets;
 
 
-        int num1 = 11;
-        int num2 = 2;
-        int num3 = 10;
+        numberOfTickets = availableTickets ?? 0;
 
-        int result = num1 % num2;
-
-        bool isTrue = ((num1 != num2) && (num1 == num3)) ;
-
-        bool isNumber10 = num1 <= 10 ? true : false;
-
-        Console.WriteLine("the result = " + isNumber10);
+        Console.WriteLine(numberOfTickets);
 
         Console.ReadKey(true);
     }
