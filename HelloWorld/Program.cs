@@ -2,6 +2,7 @@
 
 class Program
 {
+    //the main function
     static void Main()
     {
 
@@ -9,13 +10,15 @@ class Program
 
         Console.WriteLine(str[0]);
 
-        int[] numbers = new int[3];
+        /*int[] numbers = new int[3];
 
         numbers[0] = 100;
         numbers[1] = 200;
         numbers[2] = 300;
 
-        Console.WriteLine(numbers[2]);
+        Console.WriteLine(numbers[2]);*/
+
+        myClass cls = new myClass();
 
         string[] strArr = new string[] { "Mohamed", "Mahomud", "Salah" } ;
 
@@ -23,5 +26,14 @@ class Program
 
         Console.ReadKey(true);
     }
+}
+
+
+/// <summary>
+/// Ahmed Mohamady Class For bla bla bla 
+/// </summary>
+class myClass { 
+
+
 }
 
