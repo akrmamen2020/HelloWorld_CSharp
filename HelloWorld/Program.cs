@@ -2,38 +2,49 @@
 
 class Program
 {
-    //the main function
     static void Main()
     {
+        Console.WriteLine("Please enter your number :");
+        int num = int.Parse(Console.ReadLine());
 
-        string str = "Ahmed Moahamdy 2020";
 
-        Console.WriteLine(str[0]);
+        //if (num == 1)
+        //{
+        //    Console.WriteLine("Your number is 1");
+        //}
+        //else if (num == 2)
+        //{
+        //    Console.WriteLine("Your number is 2");
+        //}
+        //else if (num == 3)
+        //{
+        //    Console.WriteLine("Your number is 3");
+        //}
+        //else 
+        //{
+        //    Console.WriteLine("Your number is out of range");
+        //}
 
-        /*int[] numbers = new int[3];
 
-        numbers[0] = 100;
-        numbers[1] = 200;
-        numbers[2] = 300;
+        int num2 = 20;
 
-        Console.WriteLine(numbers[2]);*/
+        if (num == 1 || num == 2)
+        {
+            Console.WriteLine("Number is 1 or 2");
+        }
+        else if(num == 10 && num2 ==20)
+        {
+            Console.WriteLine("Number is 10 and 20");
+        }
+        else
+        {
+            Console.WriteLine("Number is out of range");
+        }
 
-        myClass cls = new myClass();
 
-        string[] strArr = new string[] { "Mohamed", "Mahomud", "Salah" } ;
-
-        Console.WriteLine(strArr[1][0]);
 
         Console.ReadKey(true);
     }
 }
 
-
-/// <summary>
-/// Ahmed Mohamady Class For bla bla bla 
-/// </summary>
-class myClass { 
-
-
-}
 
