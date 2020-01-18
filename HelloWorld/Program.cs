@@ -4,44 +4,47 @@ class Program
 {
     static void Main()
     {
-        Console.WriteLine("Please enter your number :");
-        int num = int.Parse(Console.ReadLine());
+
+        int total = 0;
 
 
-        //if (num == 1)
-        //{
-        //    Console.WriteLine("Your number is 1");
-        //}
-        //else if (num == 2)
-        //{
-        //    Console.WriteLine("Your number is 2");
-        //}
-        //else if (num == 3)
-        //{
-        //    Console.WriteLine("Your number is 3");
-        //}
-        //else 
-        //{
-        //    Console.WriteLine("Your number is out of range");
-        //}
+        Start:
+
+        Console.WriteLine("select your sandwich : 1- Large , 2- x-Large, 3 xx-Large");
+        int item = int.Parse(Console.ReadLine());
 
 
-        int num2 = 20;
-
-        if (num == 1 || num == 2)
+        switch (item)
         {
-            Console.WriteLine("Number is 1 or 2");
+            case 1:
+                total += 10;
+                break;
+            case 2:
+                total += 20;
+                break;
+            case 3:
+                total += 30;
+                goto case 1;
+            default:
+                Console.WriteLine("Your choice {0} is invalid");
+                break;
         }
-        else if(num == 10 && num2 ==20)
+
+        Console.WriteLine("Your choice is : {0} $", item);
+
+        Console.WriteLine("Do you want another sandwich ? y-Yes , n-No");
+        string rst = Console.ReadLine();
+
+        if (rst == "y")
         {
-            Console.WriteLine("Number is 10 and 20");
+            goto Start;
         }
         else
         {
-            Console.WriteLine("Number is out of range");
+
         }
 
-
+        Console.WriteLine("Total Check is : {0} $", total);
 
         Console.ReadKey(true);
     }
