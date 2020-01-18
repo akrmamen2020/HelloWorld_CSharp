@@ -5,41 +5,40 @@ class Program
     static void Main()
     {
 
+        //Program p = new Program();
+        //Program.EvenNumbers(40);
+        //Console.WriteLine(Program.addNumbers(20, 15));
 
-        //int[] numbers = new int[4];
+        Program.EvenNumbers(9);
 
-        //numbers[0] = 101;
-        //numbers[1] = 102;
-        //numbers[2] = 103;
-        //numbers[3] = 104;
-
-
-        //for (int i  = 0; i <= numbers.Length -1; i++)
-        //{
-        //    Console.WriteLine(numbers[i]);
-        //}
-
-        //foreach (int i in numbers) {
-        //    Console.WriteLine("Foreach {0}", i);
-        //}
-
-
-        for (int i = 0; i <= 20; i++)
-        {
-
-            if (i % 2 == 1)
-                continue;
-
-            Console.WriteLine(i);
-
-            //if (i == 10)
-            //    break;
-        }
-
-        Console.WriteLine("After loop");
 
         Console.ReadKey(true);
     }
+
+    public static int addNumbers(int num1,int num2)
+    {
+        int result = num1 + num2;
+        return result;
+    }
+
+    public static void EvenNumbers(int target)
+    {
+        int Start = 0;
+
+        if (target <= 10)
+        {
+            Console.WriteLine("Number is < 10");
+            return;
+        }
+
+        while (Start <= target)
+        {
+            Console.WriteLine("the number is {0} ", Start);
+            Start += 2;
+        }
+
+    }
+
 }
 
 
