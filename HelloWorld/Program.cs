@@ -6,25 +6,37 @@ class Program
     {
 
 
-    
-        int Start = 0;
-        string rst = "";
+        //int[] numbers = new int[4];
 
-        do
+        //numbers[0] = 101;
+        //numbers[1] = 102;
+        //numbers[2] = 103;
+        //numbers[3] = 104;
+
+
+        //for (int i  = 0; i <= numbers.Length -1; i++)
+        //{
+        //    Console.WriteLine(numbers[i]);
+        //}
+
+        //foreach (int i in numbers) {
+        //    Console.WriteLine("Foreach {0}", i);
+        //}
+
+
+        for (int i = 0; i <= 20; i++)
         {
-            Console.WriteLine("Please Set your target");
-            int theTarget = int.Parse(Console.ReadLine());
-            while (Start <= theTarget)
-            {
-                Console.WriteLine(" your number is {0} ", Start);
-                Start++;
-            }
-            Console.WriteLine("Do you want to play again ( y-Yes, n- No)");
-            rst = Console.ReadLine();
-            Start = 0;
-        } while (rst == "y");
 
-        Console.WriteLine("Game over");
+            if (i % 2 == 1)
+                continue;
+
+            Console.WriteLine(i);
+
+            //if (i == 10)
+            //    break;
+        }
+
+        Console.WriteLine("After loop");
 
         Console.ReadKey(true);
     }
