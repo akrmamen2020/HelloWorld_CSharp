@@ -6,48 +6,53 @@ class Program
     static void Main()
     {
 
-        Animal dog = new Animal("black", 1, "german");
-        dog.PrintFullInfo();
-        dog.Run();
+
+        Circle circle = new Circle(5);
+        float Area = circle.CalculateArea();
+        Console.WriteLine(Area);
+
+        Circle circle2 = new Circle(6);
+        float Area2 = circle2.CalculateArea();
+        Console.WriteLine(Area2);
+
+        Circle circle3 = new Circle(61);
+        float Area3 = circle3.CalculateArea();
+        Console.WriteLine(Area2);
+
+        Circle circle4 = new Circle(50);
+        float Area4 = circle2.CalculateArea();
+        Console.WriteLine(Area2);
 
         Console.ReadKey(true);
     }
 }
 
-class Animal
+ class Circle
 {
-    string _color;
-    int _length;
-    string _name;
+   public static  float _PI ;
+    int _Radius;
 
-    public Animal(string color, int len, string name)
+    static Circle()
     {
-        _color = color;
-        _length = len;
-        _name = name;
+        Console.WriteLine("static Circle");
+        _PI = 3.141F;
     }
 
-    public void PrintFullInfo()
+
+    public Circle(int Radius)
     {
-        Console.WriteLine(" color = {0} , len = {1}, name = {2} ", _color, _length, _name);
+        Console.WriteLine(" public Circle {0} " , Radius);
+        _Radius = Radius;
     }
 
-    public void Run()
+
+    public static void Print()
     {
-        Console.WriteLine(" the {0} is running ", _name);
+        Console.WriteLine("Circle");
     }
 
-    ~Animal()
+    public float CalculateArea()
     {
-        //Clean The Code
-        _color = null;
-        _name = null;
+        return this._Radius * Circle._PI;
     }
-}
-
-
-class Customer
-{
-
-
 }
