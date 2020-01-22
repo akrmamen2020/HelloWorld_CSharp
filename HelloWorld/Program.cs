@@ -3,11 +3,11 @@
 
 public class Employee
 {
-    public string FirstName;
-    public string LastName;
+    public string FirstName = "Ahmed";
+    public string LastName = "Mohamady";
     public string Address;
 
-    public void PrintEmpInfo()
+    public virtual void PrintEmpInfo()
     {
         Console.WriteLine(FirstName + "  " + LastName);
     }
@@ -15,15 +15,26 @@ public class Employee
 
 public class FullTimeEmployee : Employee 
 {
-
+    public override void PrintEmpInfo()
+    {
+        base.PrintEmpInfo();
+        Console.WriteLine(" {0} {1}   The Emp From Full Time", base.FirstName, base.LastName);
+    }
 }
 
 public class PartTimeEmployee : Employee
 {
-    public new void PrintEmpInfo()
+    public override void PrintEmpInfo()
     {
-        base.PrintEmpInfo();
-        Console.WriteLine("The Emp From Part Time");
+        Console.WriteLine(" {0} {1}   The Emp From Part Time", base.FirstName, base.LastName);
+    }
+}
+
+public class TempEmployee : Employee
+{
+    public override void PrintEmpInfo()
+    {
+        Console.WriteLine(" {0} {1}   The Emp From Temp", base.FirstName, base.LastName);
     }
 }
 
@@ -31,18 +42,17 @@ class Program
 {
     static void Main()
     {
-        PartTimeEmployee PREP = new PartTimeEmployee();
-        PREP.FirstName = "Ahmed";
-        PREP.LastName = "Mohamady";
-        PREP.PrintEmpInfo();
+        Employee[] employees = new Employee[4];
 
-        Console.WriteLine("=============================");
+        employees[0] = new Employee();
+        employees[1] = new FullTimeEmployee();
+        employees[2] = new PartTimeEmployee();
+        employees[3] = new TempEmployee();
 
-        //((Employee)PREP).PrintEmpInfo();
-        Employee PREP2 = new PartTimeEmployee();
-        PREP2.FirstName = "Mohamed";
-        PREP2.LastName = "Salah";
-        PREP2.PrintEmpInfo();
+        foreach (Employee e in employees)
+        {
+            e.PrintEmpInfo();
+        }
 
         Console.ReadKey(false);
  
