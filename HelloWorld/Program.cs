@@ -1,40 +1,29 @@
 ﻿using System;
 
 
-public class Employee
+public class Father
 {
-    public string FirstName = "Ahmed";
-    public string LastName = "Mohamady";
-    public string Address;
-
-    public virtual void PrintEmpInfo()
+    public virtual void Print()
     {
-        Console.WriteLine(FirstName + "  " + LastName);
+        Console.WriteLine("Hello Father. :)");
+    }
+
+    public void myName()
+    {
+        Console.WriteLine("Father Name. :)");
     }
 }
 
-public class FullTimeEmployee : Employee 
+public class Son : Father
 {
-    public override void PrintEmpInfo()
+    public override void Print()
     {
-        base.PrintEmpInfo();
-        Console.WriteLine(" {0} {1}   The Emp From Full Time", base.FirstName, base.LastName);
+        Console.WriteLine("Hello Son. :)");
     }
-}
 
-public class PartTimeEmployee : Employee
-{
-    public override void PrintEmpInfo()
+    public new void myName()
     {
-        Console.WriteLine(" {0} {1}   The Emp From Part Time", base.FirstName, base.LastName);
-    }
-}
-
-public class TempEmployee : Employee
-{
-    public override void PrintEmpInfo()
-    {
-        Console.WriteLine(" {0} {1}   The Emp From Temp", base.FirstName, base.LastName);
+        Console.WriteLine("Son Name. :)");
     }
 }
 
@@ -42,17 +31,11 @@ class Program
 {
     static void Main()
     {
-        Employee[] employees = new Employee[4];
 
-        employees[0] = new Employee();
-        employees[1] = new FullTimeEmployee();
-        employees[2] = new PartTimeEmployee();
-        employees[3] = new TempEmployee();
-
-        foreach (Employee e in employees)
-        {
-            e.PrintEmpInfo();
-        }
+        Father father = new Son();
+        father.Print();
+        Console.WriteLine("===================================");
+        father.myName();
 
         Console.ReadKey(false);
  
