@@ -1,55 +1,25 @@
 ﻿using System;
 
-public class Student
+public struct Customer
 {
-    int ID;
-    string Name;
-    int PassMark = 50;
+    private int _id;
+    private string _name;
 
-    public int _ID
+    public int ID
     {
-        get
-        {
-            return ID;
-        }
-        set
-        {
-            if (value <= 0)
-            {
-                Console.WriteLine("Cann't Accept this");
-            }
-            else
-            {
-                this.ID = value;
-            }
-        }
+        get { return _id; }
+        set { _id = value; }
     }
 
-    public string _Name
+    public Customer(int _ID, string _NAME)
     {
-        get
-        {
-            return Name;
-        }
-        set
-        {
-            if (value == null)
-            {
-                Console.WriteLine("Cann't Accept this");
-            }
-            else
-            {
-                Name = value;
-            }
-        }
+        _id = _ID;
+        _name = _NAME;
     }
 
-    public int PassMark1
+    public void Print()
     {
-        get
-        {
-            return PassMark;
-        }
+        Console.WriteLine(" Name : {0}, ID : {1} ",_name , _id);
     }
 }
 
@@ -57,10 +27,9 @@ class Program
 {
     static void Main()
     {
-        Student student = new Student();
-        student._ID = -101;
-        student._Name = "Ahmed Moahamdy";
-        Console.WriteLine(student.PassMark1);
+        Customer customer = new Customer(1, "Ahmed");
+
+        customer.Print();
 
         Console.ReadKey(false);
     }
