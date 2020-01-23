@@ -1,37 +1,53 @@
 ﻿using System;
 
- interface I1
+
+abstract class Father
 {
-    void theMathod();
+
+
 }
 
-interface I2
+abstract class Customer : Father, IM 
 {
-    void theMathod();
-}
 
-class theClass : I1, I2
-{
-    void I1.theMathod()
+    int ID = 10;
+
+
+    public abstract void Print();
+
+    public void info()
     {
-        Console.WriteLine("I1 Method");
+
     }
 
-    void I2.theMathod()
+    public void myMethod()
     {
-        Console.WriteLine("I2 Method");
+        throw new NotImplementedException();
     }
 }
 
-class Program
+interface IM 
+{
+    void myMethod(); 
+
+}
+
+sealed class myClass
+{
+}
+
+class Program : Customer
 {
     static void Main()
     {
-        I1 cls = new theClass();
-        cls.theMathod();
 
 
         Console.ReadKey(false);
+    }
+
+    public override void Print()
+    {
+        base.info(); 
     }
 }
 
