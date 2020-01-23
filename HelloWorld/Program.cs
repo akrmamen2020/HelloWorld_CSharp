@@ -1,45 +1,25 @@
 ﻿using System;
 
-
-interface ICustomer
+ interface I1
 {
-    void Print();
-    int add(int x1, int x2);
+    void theMathod();
 }
 
-interface I2 : ICustomer
+interface I2
 {
-    void I2Method();
+    void theMathod();
 }
 
-public class Customer : I2
+class theClass : I1, I2
 {
-    public int add(int x1, int x2)
+    void I1.theMathod()
     {
-        return x1 + x2;
+        Console.WriteLine("I1 Method");
     }
 
-    public void I2Method()
+    void I2.theMathod()
     {
-
-    }
-
-    public void Print()
-    {
-        Console.WriteLine("The Customer Class");
-    }
-}
-
-public class Student : ICustomer
-{
-    public int add(int x1, int x2)
-    {
-        throw new NotImplementedException();
-    }
-
-    public void Print()
-    {
-        Console.WriteLine("The Student Class");
+        Console.WriteLine("I2 Method");
     }
 }
 
@@ -47,11 +27,9 @@ class Program
 {
     static void Main()
     {
-        //ICustomer customer = new ICustomer();
+        I1 cls = new theClass();
+        cls.theMathod();
 
-        I2 customer = new Customer();
-        customer.Print();
-        customer.I2Method();
 
         Console.ReadKey(false);
     }
