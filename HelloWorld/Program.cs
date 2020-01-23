@@ -1,53 +1,55 @@
 ﻿using System;
 
 
-abstract class Father
+interface IA
 {
-
-
+    void AMethod();
 }
 
-abstract class Customer : Father, IM 
+class A : IA
 {
-
-    int ID = 10;
-
-
-    public abstract void Print();
-
-    public void info()
+    public void AMethod()
     {
 
     }
+}
 
-    public void myMethod()
+interface IB
+{
+    void BMethod();
+}
+
+class B : IB
+{
+    public void BMethod()
     {
-        throw new NotImplementedException();
+
     }
 }
 
-interface IM 
+class AB : IA, IB
 {
-    void myMethod(); 
+    A a = new A();
+    B b = new B();
 
+    public void AMethod()
+    {
+        a.AMethod();
+    }
+
+    public void BMethod()
+    {
+        b.BMethod();
+    }
 }
 
-sealed class myClass
-{
-}
-
-class Program : Customer
+class Program
 {
     static void Main()
     {
+        IA ai = new AB();
+        ai.AMethod();
 
-
-        Console.ReadKey(false);
-    }
-
-    public override void Print()
-    {
-        base.info(); 
     }
 }
 
