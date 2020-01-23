@@ -1,30 +1,68 @@
 ﻿using System;
 
+public class Student
+{
+    int ID;
+    string Name;
+    int PassMark = 50;
+
+    public int _ID
+    {
+        get
+        {
+            return ID;
+        }
+        set
+        {
+            if (value <= 0)
+            {
+                Console.WriteLine("Cann't Accept this");
+            }
+            else
+            {
+                this.ID = value;
+            }
+        }
+    }
+
+    public string _Name
+    {
+        get
+        {
+            return Name;
+        }
+        set
+        {
+            if (value == null)
+            {
+                Console.WriteLine("Cann't Accept this");
+            }
+            else
+            {
+                Name = value;
+            }
+        }
+    }
+
+    public int PassMark1
+    {
+        get
+        {
+            return PassMark;
+        }
+    }
+}
 
 class Program
 {
     static void Main()
     {
-
-        add(5, 6, 1,1,1,1,1);
-
-        int[] arr = new int[4];  
-
-        add(5, 0, false, arr);
+        Student student = new Student();
+        student._ID = -101;
+        student._Name = "Ahmed Moahamdy";
+        Console.WriteLine(student.PassMark1);
 
         Console.ReadKey(false);
-    }
-
-    private static int add(int n2, int n1, params int[] arr)
-    {
-        Console.WriteLine("Sum = {0} ", n1 + n2);
-        return n1 + n2; 
-    }
-
-    public static void add(int n2, int n1, int[] arr)
-    {
-        n1 = 20;
-        Console.WriteLine("Sum = {0} ", n1 + n2);
     }
 }
 
