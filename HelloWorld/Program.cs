@@ -1,25 +1,45 @@
 ﻿using System;
 
-public struct Customer
-{
-    private int _id;
-    private string _name;
 
-    public int ID
+interface ICustomer
+{
+    void Print();
+    int add(int x1, int x2);
+}
+
+interface I2 : ICustomer
+{
+    void I2Method();
+}
+
+public class Customer : I2
+{
+    public int add(int x1, int x2)
     {
-        get { return _id; }
-        set { _id = value; }
+        return x1 + x2;
     }
 
-    public Customer(int _ID, string _NAME)
+    public void I2Method()
     {
-        _id = _ID;
-        _name = _NAME;
+
     }
 
     public void Print()
     {
-        Console.WriteLine(" Name : {0}, ID : {1} ",_name , _id);
+        Console.WriteLine("The Customer Class");
+    }
+}
+
+public class Student : ICustomer
+{
+    public int add(int x1, int x2)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void Print()
+    {
+        Console.WriteLine("The Student Class");
     }
 }
 
@@ -27,9 +47,11 @@ class Program
 {
     static void Main()
     {
-        Customer customer = new Customer(1, "Ahmed");
+        //ICustomer customer = new ICustomer();
 
+        I2 customer = new Customer();
         customer.Print();
+        customer.I2Method();
 
         Console.ReadKey(false);
     }
