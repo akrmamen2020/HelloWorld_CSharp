@@ -1,30 +1,50 @@
 ﻿using System;
+using System.IO;
 
 class Program
 {
     static void Main()
     {
+        StreamReader streamReader = null;
+        try
+        {
 
-        int x = 0;
+            streamReader = new StreamReader(@"D:\TEMP\Test2\Welcome.txt");
+            Console.WriteLine(streamReader.ReadToEnd());
 
-        x = 300 + 20; 
+        }
+        catch (FileNotFoundException ex)
+        {
+            Console.WriteLine(ex.Message);
+            Console.WriteLine("===========================");
+            Console.WriteLine(ex.FileName);
+            Console.WriteLine("===========================");
+            Console.WriteLine(ex.StackTrace);
+        }
+        catch (DirectoryNotFoundException ex)
+        {
+            Console.WriteLine(ex.Message);
+            Console.WriteLine("===========================");
+            Console.WriteLine(ex.StackTrace);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+            Console.WriteLine("===========================");
+            Console.WriteLine(ex.StackTrace);
+        }
+        finally
+        {
+            if (streamReader != null)
+                streamReader.Close();
+        }
 
-        addNumbers(5, 10);
+        Console.WriteLine("New Task");
 
-        Console.WriteLine("Add Finish"); 
-
-        Console.ReadKey(true);
+            Console.ReadKey(true);
     }
 
 
-    public static void addNumbers(int x1, int x2)
-    {
-        int x = 0;
-
-        x = x1 + x2;
-
-        Console.WriteLine(" the Sum = {0} ", x);
-    }
 }
 
 
