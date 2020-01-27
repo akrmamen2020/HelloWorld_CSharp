@@ -1,55 +1,43 @@
 ﻿using System;
 
-
-interface IA
+class myCalss
 {
-    void AMethod();
-}
+    public int ID { get; set; }
 
-class A : IA
-{
-    public void AMethod()
+
+    private string name; 
+    public string Name {
+        get {
+            return name;
+        }  set {
+            name = value; 
+        } }
+
+    private int[] arr; 
+
+    public int[] Arr
     {
-
-    }
-}
-
-interface IB
-{
-    void BMethod();
-}
-
-class B : IB
-{
-    public void BMethod()
-    {
-
-    }
-}
-
-class AB : IA, IB
-{
-    A a = new A();
-    B b = new B();
-
-    public void AMethod()
-    {
-        a.AMethod();
+        get { return arr; }
+        set { arr = value; }
     }
 
-    public void BMethod()
-    {
-        b.BMethod();
-    }
+    public int[] arr2 { get; set; }
 }
+
 
 class Program
 {
     static void Main()
     {
-        IA ai = new AB();
-        ai.AMethod();
+        myCalss cls = new myCalss() { ID = 1, Name = "Ahmed"};
+        myCalss cls2 = new myCalss() { ID = 2 };
 
+        //cls.ID = 1;
+        //cls.Name = "Ahmed";
+
+        Console.WriteLine(cls.ID + "  " + cls.Name);
+
+        Console.ReadKey(true);
     }
 }
 
