@@ -8,13 +8,6 @@ namespace HelloWorld
 {
     class TheClass
     {
-        MyCustomer customer = new MyCustomer();
 
-        public void  setCustomerInfo()
-        {
-            customer.name = "Ahmed";
-            customer.Print();
-        
-        }
     }
 }
