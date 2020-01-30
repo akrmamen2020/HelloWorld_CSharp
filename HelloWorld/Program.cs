@@ -26,10 +26,10 @@ namespace theSystem
             Console.WriteLine("ID IS {0}", ID);
         }
 
-        public string PrintName()
+        public string PrintName(string theName)
         {
-            Console.WriteLine("Name is {0}", Name);
-            return Name;
+            Console.WriteLine("Name is {0}", theName);
+            return theName;
         }
     }
 
@@ -37,42 +37,19 @@ namespace theSystem
     {
         static void Main()
         {
-            Type t = Type.GetType("theSystem.Customer");
-
-            t = typeof(Customer);
-
             Customer c = new Customer();
-            t = c.GetType();
+            //c.PrintName("Ahmed");
 
+            Type t = c.GetType();
+            object obj = Activator.CreateInstance(t);
 
-            Console.WriteLine( t.Name  + " /// " +   t.FullName);
-            
-            Console.WriteLine("=========================================");
-            Console.WriteLine("The Properties");
-            PropertyInfo[] propertyInfos = t.GetProperties();
+            MethodInfo mi = t.GetMethod("PrintName");
 
-            foreach (PropertyInfo pi in propertyInfos)
-            {
-                Console.WriteLine(pi.PropertyType.Name + "  " + pi.Name);
-            }
+            string[] prams = new string[] { "Ahmed Mohamady" };
 
-            Console.WriteLine("=========================================");
-            Console.WriteLine("The Methodes");
-            MethodInfo[] methodInfos = t.GetMethods();
+            string theFullName = (string)  mi.Invoke(obj, prams);
 
-            foreach (MethodInfo mi in methodInfos)
-            {
-                Console.WriteLine(mi.ReturnType.Name + "  " + mi.Name);
-            }
-
-            Console.WriteLine("=========================================");
-            Console.WriteLine("The Cons");
-            ConstructorInfo[] consInfos = t.GetConstructors();
-
-            foreach (ConstructorInfo ci in consInfos)
-            {
-                Console.WriteLine(ci.ToString());
-            }
+            Console.WriteLine(" the Cating name is {0}  ", theFullName);
 
             Console.ReadKey(true);
         }
