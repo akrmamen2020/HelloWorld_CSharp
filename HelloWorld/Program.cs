@@ -1,28 +1,37 @@
 ﻿using System;
 
-class Customr
+class Customer
 {
-    public int ID { get; set; }
-    public string Name  { get; set; }
-    public Gender _Gender { get; set; }
+    protected int father;
+
 }
 
-//0 - Unknown 
-//1 - Male
-//2 - Female
-
-public enum Gender : short
+class MyCustomer : Customer
 {
-    Unknown = 1,
-    Male = 50,
-    Female = 3
-}
 
-public enum alfa :short
-{
-    a = 1,
-    b = 50,
-    c = 3
+    #region Fields
+    private int ID;
+    private int code;
+    #endregion
+
+    #region Properties
+    public string name { get; set; }
+    #endregion
+
+    #region Methodes
+    public void Print()
+    {
+        base.father = 1;
+        getInformation(); 
+    }
+    private void getInformation()
+    {
+        ID = 1;
+        code = 1;
+        name = "ahmed";
+        Console.WriteLine(ID + "  " + name); 
+    }
+    #endregion
 }
 
 
@@ -30,50 +39,16 @@ class Program
 {
     static void Main()
     {
-
-
-        Customr[] customrs = new Customr[3];
-
-        short[] values = (short[])Enum.GetValues(typeof(Gender));
-
-        foreach (short i in values)
-        {
-            Console.WriteLine(i); 
-        }
-
-        Gender gender = (Gender)3;
-        Console.WriteLine(gender);
-
-
-        Gender g = (Gender) alfa.c;
-
-        customrs[0] = new Customr() { ID = 1, _Gender = Gender.Unknown, Name = "adsasdas" };
-        customrs[1] = new Customr() { ID = 2, _Gender = Gender.Male, Name = "Ahmed" };
-        customrs[2] = new Customr() { ID = 3, _Gender = Gender.Female, Name = "Mona" };
-
-        foreach (Customr c in customrs)
-        {
-            Console.WriteLine(" Name: {0}, Gender: {1} ", c.Name, getGender(c._Gender)); 
+        Customer c = new Customer(); 
         
-        }
+
+        MyCustomer myCustomer = new MyCustomer();
+
+        myCustomer.name = "";
+        myCustomer.Print();
+        
 
         Console.ReadKey(true);
-    }
-
-
-    public static string getGender(Gender _Gender)
-    {
-        switch (_Gender)
-        {
-            case Gender.Unknown:
-                return "Unknown";
-            case Gender.Male:
-                return "Male";
-            case Gender.Female:
-                return "Female";
-            default:
-                return "Invalid";
-        }
     }
 }
 
