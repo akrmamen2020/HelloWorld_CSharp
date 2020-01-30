@@ -1,4 +1,5 @@
 ﻿using System;
+using MyClassLibrary; 
 
 class Customer
 {
@@ -6,7 +7,7 @@ class Customer
 
 }
 
-class MyCustomer : Customer
+internal class MyCustomer : Customer
 {
 
     #region Fields
@@ -34,19 +35,14 @@ class MyCustomer : Customer
     #endregion
 }
 
-
 class Program
 {
     static void Main()
     {
-        Customer c = new Customer(); 
-        
+        MyClassLibrary.myClass _myClass = new myClass();
+        _myClass.Print();
 
-        MyCustomer myCustomer = new MyCustomer();
 
-        myCustomer.name = "";
-        myCustomer.Print();
-        
 
         Console.ReadKey(true);
     }

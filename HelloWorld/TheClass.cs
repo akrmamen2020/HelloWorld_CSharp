@@ -15,8 +15,6 @@ namespace HelloWorld
             customer.name = "Ahmed";
             customer.Print();
         
-
         }
-
     }
 }
