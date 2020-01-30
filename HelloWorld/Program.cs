@@ -1,5 +1,29 @@
 ﻿using System;
-using System.IO;
+
+class Customr
+{
+    public int ID { get; set; }
+    public string Name  { get; set; }
+    public Gender _Gender { get; set; }
+}
+
+//0 - Unknown 
+//1 - Male
+//2 - Female
+
+public enum Gender : short
+{
+    Unknown = 1,
+    Male = 50,
+    Female = 3
+}
+
+public enum alfa :short
+{
+    a = 1,
+    b = 50,
+    c = 3
+}
 
 
 class Program
@@ -7,63 +31,50 @@ class Program
     static void Main()
     {
 
-        bool userInSystem = true;
 
-        try
+        Customr[] customrs = new Customr[3];
+
+        short[] values = (short[])Enum.GetValues(typeof(Gender));
+
+        foreach (short i in values)
         {
-
-            if (userInSystem)
-            {
-                throw new UserInSystemException("the Error Msg");
-
-            }
-        }
-        catch (UserInSystemException ex)
-        {
-            Console.WriteLine("Error :" + ex.Message);
-
+            Console.WriteLine(i); 
         }
 
-        try
+        Gender gender = (Gender)3;
+        Console.WriteLine(gender);
+
+
+        Gender g = (Gender) alfa.c;
+
+        customrs[0] = new Customr() { ID = 1, _Gender = Gender.Unknown, Name = "adsasdas" };
+        customrs[1] = new Customr() { ID = 2, _Gender = Gender.Male, Name = "Ahmed" };
+        customrs[2] = new Customr() { ID = 3, _Gender = Gender.Female, Name = "Mona" };
+
+        foreach (Customr c in customrs)
         {
-            Console.WriteLine("Enter the First Number :");
-            int x1 = int.Parse(Console.ReadLine());
-
-            Console.WriteLine("Enter the Secound Number :");
-            int x2 = int.Parse(Console.ReadLine());
-
-            int result = x1 / x2;
-
-            Console.WriteLine(result);
-        }
-        catch (Exception ex)
-        {
-            try
-            {
-                StreamWriter st = new StreamWriter(@"D:\TEMP\Test1\Log.txt");
-                st.WriteLine(ex.Message);
-                st.Close();
-                Console.WriteLine("There is an exception");
-            }
-            catch (Exception ex2)
-            {
-                Console.WriteLine(ex.Message);
-            }
+            Console.WriteLine(" Name: {0}, Gender: {1} ", c.Name, getGender(c._Gender)); 
+        
         }
 
         Console.ReadKey(true);
     }
 
 
-}
-
-public class UserInSystemException : Exception
-{
-    public UserInSystemException(string msg) : base(msg)
-    { 
-    
+    public static string getGender(Gender _Gender)
+    {
+        switch (_Gender)
+        {
+            case Gender.Unknown:
+                return "Unknown";
+            case Gender.Male:
+                return "Male";
+            case Gender.Female:
+                return "Female";
+            default:
+                return "Invalid";
+        }
     }
-
 }
 
 
