@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text; 
 
 namespace theSystem
 {
@@ -6,57 +7,21 @@ namespace theSystem
     {
         static void Main()
         {
-            int Number = 10;
+            String sql = " Select * From Table ";
+            sql += " where Col1 = 'asdsa' ";
+            sql += " and Col2 = 10000  ";
 
-            Number.ToString();
+            //Console.WriteLine(sql);
 
-            Console.WriteLine(Number.ToString());
-            Console.WriteLine(Convert.ToString(Number));
+            StringBuilder sb = new StringBuilder("Select * From Table");
+            sb.Append(" where Col1 = 'asdsa' ");
+            sb.Append(" and Col2 = 10000  ");
 
-            Console.WriteLine("================================");
-            Customer c = new Customer();
-            c.FirstName = "Ahmed";
-            c.LastName = "Mohamady";
+            
 
-            Console.WriteLine(Convert.ToString(c));
-            Console.WriteLine(c.ToString());
+            Console.WriteLine(sb +  sql); 
 
-            int Number2 = 10;
-
-            Console.WriteLine("================================");
-
-            //Console.WriteLine(Number.Equals(Number2));
-
-            Customer c2 = new Customer();
-            c2.FirstName = "Ahmed";
-            c2.LastName = "Mohamady";
-
-
-            Console.WriteLine(c2.Equals(c)); 
-
-            Console.ReadKey(true);
+            Console.ReadKey(true); 
         }
     }
-
-    class Customer
-    {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-
-
-        public override string ToString()
-        {
-            return FirstName + " " + LastName;
-        }
-
-        public override bool Equals(object obj)
-        {
-            if (obj == null) return false;
-
-            if (!(obj is Customer)) return false;
-
-            return this.FirstName == ((Customer)obj).FirstName && this.LastName == ((Customer)obj).LastName;
-        }
-    }
-
 }
