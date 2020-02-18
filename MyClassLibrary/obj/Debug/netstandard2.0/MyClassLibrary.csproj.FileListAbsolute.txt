@@ -6,3 +6,4 @@ C:\Users\major\source\repos\HelloWorld\MyClassLibrary\obj\Debug\netstandard2.0\M
 C:\Users\major\source\repos\HelloWorld\MyClassLibrary\obj\Debug\netstandard2.0\MyClassLibrary.AssemblyInfo.cs
 C:\Users\major\source\repos\HelloWorld\MyClassLibrary\obj\Debug\netstandard2.0\MyClassLibrary.dll
 C:\Users\major\source\repos\HelloWorld\MyClassLibrary\obj\Debug\netstandard2.0\MyClassLibrary.pdb
+C:\Users\major\source\repos\HelloWorld\MyClassLibrary\obj\Debug\netstandard2.0\MyClassLibrary.csproj.CoreCompileInputs.cache

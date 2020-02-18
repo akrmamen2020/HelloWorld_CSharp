@@ -1,57 +1,61 @@
 ﻿using System;
-using System.Reflection;
-
 
 namespace theSystem
 {
-    class Customer 
-    {
-        public int ID { get; set; }
-        public String Name { get; set; }
-
-        public Customer()
-        {
-            ID = 0;
-            Name = "";
-        }
-
-        public Customer(int _ID, string _Name)
-        {
-            ID = _ID;
-            Name = _Name;
-        }
-
-        public void PrintID()
-        {
-            Console.WriteLine("ID IS {0}", ID);
-        }
-
-        public string PrintName(string theName)
-        {
-            Console.WriteLine("Name is {0}", theName);
-            return theName;
-        }
-    }
-
     class Program
     {
         static void Main()
         {
+            int Number = 10;
+
+            Number.ToString();
+
+            Console.WriteLine(Number.ToString());
+            Console.WriteLine(Convert.ToString(Number));
+
+            Console.WriteLine("================================");
             Customer c = new Customer();
-            //c.PrintName("Ahmed");
+            c.FirstName = "Ahmed";
+            c.LastName = "Mohamady";
 
-            Type t = c.GetType();
-            object obj = Activator.CreateInstance(t);
+            Console.WriteLine(Convert.ToString(c));
+            Console.WriteLine(c.ToString());
 
-            MethodInfo mi = t.GetMethod("PrintName");
+            int Number2 = 10;
 
-            string[] prams = new string[] { "Ahmed Mohamady" };
+            Console.WriteLine("================================");
 
-            string theFullName = (string)  mi.Invoke(obj, prams);
+            //Console.WriteLine(Number.Equals(Number2));
 
-            Console.WriteLine(" the Cating name is {0}  ", theFullName);
+            Customer c2 = new Customer();
+            c2.FirstName = "Ahmed";
+            c2.LastName = "Mohamady";
+
+
+            Console.WriteLine(c2.Equals(c)); 
 
             Console.ReadKey(true);
+        }
+    }
+
+    class Customer
+    {
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+
+
+        public override string ToString()
+        {
+            return FirstName + " " + LastName;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null) return false;
+
+            if (!(obj is Customer)) return false;
+
+            return this.FirstName == ((Customer)obj).FirstName && this.LastName == ((Customer)obj).LastName;
         }
     }
 
