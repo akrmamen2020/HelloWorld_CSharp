@@ -7,4 +7,3 @@ C:\Users\major\source\repos\HelloWorld\HelloWorld\obj\Debug\HelloWorld.pdb
 C:\Users\major\source\repos\HelloWorld\HelloWorld\bin\Debug\MyClassLibrary.dll
 C:\Users\major\source\repos\HelloWorld\HelloWorld\bin\Debug\MyClassLibrary.pdb
 C:\Users\major\source\repos\HelloWorld\HelloWorld\obj\Debug\HelloWorld.csproj.CopyComplete
-C:\Users\major\source\repos\HelloWorld\HelloWorld\obj\Debug\HelloWorld.csproj.CoreCompileInputs.cache

@@ -1,9 +1,7 @@
 C:\Users\major\source\repos\HelloWorld\MyClassLibrary\bin\Debug\netstandard2.0\MyClassLibrary.deps.json
 C:\Users\major\source\repos\HelloWorld\MyClassLibrary\bin\Debug\netstandard2.0\MyClassLibrary.dll
 C:\Users\major\source\repos\HelloWorld\MyClassLibrary\bin\Debug\netstandard2.0\MyClassLibrary.pdb
-C:\Users\major\source\repos\HelloWorld\MyClassLibrary\obj\Debug\netstandard2.0\MyClassLibrary.csprojAssemblyReference.cache
 C:\Users\major\source\repos\HelloWorld\MyClassLibrary\obj\Debug\netstandard2.0\MyClassLibrary.AssemblyInfoInputs.cache
 C:\Users\major\source\repos\HelloWorld\MyClassLibrary\obj\Debug\netstandard2.0\MyClassLibrary.AssemblyInfo.cs
 C:\Users\major\source\repos\HelloWorld\MyClassLibrary\obj\Debug\netstandard2.0\MyClassLibrary.dll
 C:\Users\major\source\repos\HelloWorld\MyClassLibrary\obj\Debug\netstandard2.0\MyClassLibrary.pdb
-C:\Users\major\source\repos\HelloWorld\MyClassLibrary\obj\Debug\netstandard2.0\MyClassLibrary.csproj.CoreCompileInputs.cache
