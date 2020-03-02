@@ -49,6 +49,28 @@ namespace HelloWorld
                 emplyees.FirstOrDefault(emp => emp.EmplyeeId == EmplyeeID).Name = value; 
             }
         }
+
+
+        public string this[string EmplyeeName]
+        {
+            get
+            {
+                string theID = "";
+                foreach (Emplyee e in emplyees)
+                {
+                    if (e.Name == EmplyeeName)
+                    {
+                        theID = e.EmplyeeId.ToString();
+                    }
+                }
+                return theID;
+            }
+            set
+            {
+                emplyees.FirstOrDefault(emp => emp.Name == EmplyeeName).EmplyeeId = int.Parse(value);
+            }
+        }
+
     }
 
 
@@ -64,7 +86,8 @@ namespace HelloWorld
 
             //c[1] = "Hissen";
 
-            Console.WriteLine(c[1]);  
+
+            Console.WriteLine(c["Ahmed"]);
 
             //DataTable dt = new DataTable("myTable");
             //dt.Columns.Add("Name");
