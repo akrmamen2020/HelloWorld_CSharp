@@ -17,11 +17,15 @@ namespace HelloWorld
 
         public void sayHi()
         {
-            string name = _firstName + " " + _lastName; 
-
+            string name = _firstName + " " + _lastName;
+            theMethodP();
             Console.WriteLine("Hi " + getFullName()); 
         }
 
+        partial void theMethodP()
+        {
+            Console.WriteLine("Hi P");
+        }
     }
 
 

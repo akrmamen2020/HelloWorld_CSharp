@@ -14,7 +14,10 @@ namespace HelloWorld
     {
 
         private string _firstName;
-        private string _lastName; 
+        private string _lastName;
+
+        partial void theMethodP(); 
+
 
         public string LastName
         { 
@@ -39,12 +42,12 @@ namespace HelloWorld
     {
         static void Main()
         {
-            //Customer c = new Customer();
-            //c.sayHi();
-            //c.newMethod();
+            Customer c = new Customer();
+            c.sayHi();
+            c.newMethod();
 
-            
- 
+
+
             Console.ReadKey(true); 
         }
     }
